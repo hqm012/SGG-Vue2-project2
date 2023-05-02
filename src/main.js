@@ -35,6 +35,14 @@ Vue.use(ElementUI, { locale })
 
 Vue.config.productionTip = false
 
+// 引入api挂到$api上
+import api from "@/api";
+Vue.prototype.$api = api
+
+// 全局注册三级联动组件
+import CategorySelecter from '@/components/CategorySelecter'
+Vue.component(CategorySelecter.name, CategorySelecter)
+
 new Vue({
   el: '#app',
   router,
